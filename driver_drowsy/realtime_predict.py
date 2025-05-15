@@ -67,7 +67,7 @@ def detect_drowsiness():
             ear = (ear_left + ear_right) / 2.0
 
             # Check if drowsiness conditions are met
-            if ear < EYE_AR_THRESH and mar > MOUTH_AR_THRESH:
+            if ear < EYE_AR_THRESH or mar > MOUTH_AR_THRESH:
                 if not alarm_on:
                     print("ALERT: Drowsiness detected!")
                     play_alert()  # Play the alert sound
@@ -95,3 +95,4 @@ def detect_drowsiness():
 
 if __name__ == "__main__":
     detect_drowsiness()
+  
